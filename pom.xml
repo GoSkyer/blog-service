@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.goskyer</groupId>
-    <artifactId>blogservice</artifactId>
+    <artifactId>blog-service</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
-
-    <name>blogservice</name>
-    <description>blog service</description>
+    <name>blog-service</name>
+    <url>http://maven.apache.org</url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -81,6 +80,9 @@
     </dependencies>
 
     <build>
+
+        <finalName>blog-service</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
