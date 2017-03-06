@@ -1,12 +1,15 @@
 package org.goskyer;
 
+import com.google.gson.Gson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class BlogserviceApplication {
+public class StartApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BlogserviceApplication.class, args);
+		SpringApplication.run(StartApplication.class, args);
 	}
+
 }
