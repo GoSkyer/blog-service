@@ -32,7 +32,7 @@ spring:
         properties:
           input.encoding: UTF-8
           output.encoding: UTF-8
-          velocimacro.library: VM_global_library.vm
+#          velocimacro.library: VM_global_library.vm
           directive.parse.max.depth: 2
     http:
         encoding.charset: UTF-8
@@ -48,7 +48,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         username: root
         password: 123456
-        url: jdbc:mysql://goskyer.org:3306/jcala_blog?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://goskyer.org:3306/goskyer_blog?useUnicode=true&characterEncoding=utf8&useSSL=false
         driverClassName: com.mysql.jdbc.Driver
         schema: classpath:import.sql
         data: classpath:data.sql
@@ -59,7 +59,7 @@ spring:
             maximum-pool-size: 50
             minimum-idle: 5
 mybatis:
-    type-aliases-package: me.jcala.blog.domain,me.jcala.blog.mapping
+    type-aliases-package: org.goskyer.mapping.domain,org.goskyer.mapping.mapping
     type-handlers-package: org.apache.ibatis.type.LocalDateTypeHandler
     config-location: classpath:mybatis-config.xml
 pic:
