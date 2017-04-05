@@ -21,6 +21,8 @@ public class UserSerImpl : UserSer {
     }
 
     override fun getUsers(): List<User> {
+        var a:List<String>
+
         return userMapper.selectAll();
     }
 
