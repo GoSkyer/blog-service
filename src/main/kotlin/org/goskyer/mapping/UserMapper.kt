@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository
  */
 @Repository
 @Mapper
-public interface UserMapper {
+interface UserMapper {
 
     @Select("SELECT * FROM users WHERE user_id = #{userId}")
     @Throws(RuntimeException::class)

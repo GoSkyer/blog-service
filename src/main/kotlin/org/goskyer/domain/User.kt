@@ -4,7 +4,7 @@ import org.goskyer.conf.NoArgs
 
 /**
  * Created by zohar on 2017/3/31.
- * desc:
+ * desc: 用户
  */
 @NoArgs
 data class User(

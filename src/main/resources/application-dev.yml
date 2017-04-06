@@ -23,6 +23,9 @@ server:
 logging:
     config: classpath:log4j2.xml
 #    path: /home/jcala/blog/log/spring_log
+    level: DEBUG
+    file: ./springboot.log
+
 spring:
     velocity:
         cache: true
