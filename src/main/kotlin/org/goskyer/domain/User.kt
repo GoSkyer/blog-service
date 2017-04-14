@@ -10,4 +10,5 @@ import org.goskyer.conf.NoArgs
 data class User(
         var userId: Int?,
         var userEmail: String?,
-        var password: String?)
+        var password: String?,
+        var role:String)

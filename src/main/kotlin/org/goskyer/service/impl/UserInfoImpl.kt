@@ -1,8 +1,8 @@
-package org.goskyer.service
+package org.goskyer.service.impl
 
 import org.goskyer.domain.UserInfo
 import org.goskyer.mapping.UserInfoMapper
-import org.goskyer.service.inter.UserInfoSer
+import org.goskyer.service.UserInfoSer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service
  * desc:
  */
 @Service
-class UserInfoImpl :UserInfoSer{
+class UserInfoImpl : UserInfoSer {
 
     @Autowired
-    private lateinit var userInfoMapper:UserInfoMapper
+    private lateinit var userInfoMapper: UserInfoMapper
 
     override fun selectByUserId(userId: Int): UserInfo {
         return userInfoMapper.selectByUserId(userId)

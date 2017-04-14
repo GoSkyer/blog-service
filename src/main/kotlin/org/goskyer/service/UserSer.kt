@@ -1,4 +1,4 @@
-package org.goskyer.service.inter
+package org.goskyer.service
 
 import org.goskyer.domain.User
 
@@ -13,5 +13,7 @@ public interface UserSer {
 
     abstract fun getUsers():List<User>
 
-    abstract fun selectByEmail(email: String): Int
+    abstract fun selectByEmail(email: String): User?
+
+    fun login(email: String,password: String):String
 }

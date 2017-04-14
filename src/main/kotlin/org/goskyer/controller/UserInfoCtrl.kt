@@ -1,7 +1,7 @@
-package org.goskyer.controller.admin
+package org.goskyer.controller
 
 import org.goskyer.domain.UserInfo
-import org.goskyer.service.UserInfoImpl
+import org.goskyer.service.impl.UserInfoImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*
 class UserInfoCtrl {
 
     @Autowired
-    private lateinit var userInfoImpl:UserInfoImpl
+    private lateinit var userInfoImpl: UserInfoImpl
 
     @GetMapping("/{userId}")
     fun selectByUserId(@PathVariable("userId") userId:Int): UserInfo {

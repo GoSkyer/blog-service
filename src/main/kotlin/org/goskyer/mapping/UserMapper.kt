@@ -19,7 +19,7 @@ interface UserMapper {
     @Throws(RuntimeException::class)
     abstract fun selectById(userId: Int): User
 
-    @Insert("INSERT INTO users(user_email, password) VALUES (#{user.userEmail},#{user.password})")
+    @Insert("INSERT INTO users(user_email, password,role) VALUES (#{user.userEmail},#{user.password},#{user.role})")
     @Throws(RuntimeException::class)
     abstract fun insert(@Param("user") user: User):Int?
 
@@ -27,7 +27,7 @@ interface UserMapper {
     @Throws(RuntimeException::class)
     abstract fun selectAll():List<User>
 
-    @Select("SELECT user_id FROM users WHERE user_email = #{email}")
-    abstract fun selectByEmail(email:String):Int
+    @Select("SELECT * FROM users WHERE user_email = #{email}")
+    abstract fun selectByEmail(email:String):User?
 
 }

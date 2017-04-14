@@ -1,4 +1,4 @@
-package org.goskyer.service.inter
+package org.goskyer.service
 
 import org.goskyer.domain.UserInfo
 
@@ -8,7 +8,7 @@ import org.goskyer.domain.UserInfo
  */
 interface UserInfoSer {
 
-    fun selectByUserId(userId:Int):UserInfo
+    fun selectByUserId(userId:Int): UserInfo
 
     fun insert(userInfo: UserInfo):Int
 
