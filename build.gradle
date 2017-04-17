@@ -1,7 +1,7 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.1.1'
-		springBootVersion = '1.4.2.RELEASE'
+		springBootVersion = '1.5.2.RELEASE'
 		mybatisSpringVersion='1.1.1'
 		ehcacheVersion='2.10.2.2.21'
 		dockerPluginVersion='1.2'
@@ -32,7 +32,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 compileJava.dependsOn(processResources)
 jar {
-	baseName = 'jcalaBlog'
+	baseName = 'goskyer-blog'
 	version =  '1.0.2'
 }
 
@@ -67,15 +67,14 @@ compileTestKotlin {
 
 repositories {
 	mavenCentral()
-	maven { url "http://repo.spring.io/release" }
-	maven { url "http://repo.spring.io/milestone" }
-	maven { url "http://repo.spring.io/snapshot" }
+//	maven { url "http://repo.spring.io/release" }
+//	maven { url "http://repo.spring.io/milestone" }
+//	maven { url "http://repo.spring.io/snapshot" }
 }
 
 
 dependencies {
 	compile ("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-	compile "org.springframework.boot:spring-boot-starter-velocity:${springBootVersion}"
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	testCompile('org.springframework.boot:spring-boot-starter-test')

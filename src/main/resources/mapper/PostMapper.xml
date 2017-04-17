@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.goskyer.mapping.PostMapper">
+    <resultMap id="blogResultMap" type="org.goskyer.domain.Post" autoMapping="true">
+        <id column="post_id" property="postId"/>
+
+        <association property="user" javaType="org.goskyer.domain.UserInfo" autoMapping="true">
+            <id property="userInfoId" column="user_info_id"/>
+        </association>
+
+        <collection property="tags" column="tag" ofType="java.lang.String">
+            <result column="tag"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="selectByPostId" resultMap="blogResultMap">
+
+        SELECT
+            post.*,
+            tags.tag,
+            user_info.*
+        FROM post
+            LEFT JOIN tag_post_total
+                ON post.post_id = tag_post_total.post_id
+            LEFT JOIN tags ON tag_post_total.tag_id = tags.id
+            LEFT JOIN user_info ON post.auth_id = user_info.user_id
+        WHERE post.post_id = #{postId}
+
+    </select>
+
+
+</mapper>
+

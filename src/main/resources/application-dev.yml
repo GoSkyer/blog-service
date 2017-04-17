@@ -19,16 +19,6 @@ logging:
     file: ./springboot.log
 
 spring:
-    velocity:
-        cache: true
-        charset: UTF-8
-        view-names: error,index,projects,tags,tagView,archives,post,about,login,auth/blog_add,auth/project,
-                    auth/monitor,auth/blog_modify,auth/blog_list,auth/info,auth/result,auth/resume
-        properties:
-          input.encoding: UTF-8
-          output.encoding: UTF-8
-#          velocimacro.library: VM_global_library.vm
-          directive.parse.max.depth: 2
     http:
         encoding.charset: UTF-8
         encoding.force: false
@@ -57,8 +47,12 @@ mybatis:
     type-aliases-package: org.goskyer.mapping.domain,org.goskyer.mapping.mapping
     type-handlers-package: org.apache.ibatis.type.LocalDateTypeHandler
     config-location: classpath:mybatis-config.xml
+    mapperLocations: classpath:mapper/*.xml
+
+
 jwt:
   header: Authorization
   secret: mySecret
   expiration: 604800
   tokenHead: "Bearer "
+
