@@ -12,11 +12,11 @@ server:
             directory: /home/blog/log/server_log
             pattern: combined
             enabled: true
-logging:
-    config: classpath:log4j2.xml
-    path: /home/blog/log/spring_log
-    level: DEBUG
-    file: ./springboot.log
+#logging:
+#    config: classpath:log4j2.xml
+#    path: /home/blog/log/spring_log
+#    level: DEBUG
+#    file: ./springboot.log
 
 spring:
     http:
@@ -25,10 +25,6 @@ spring:
         multipart:
           max-file-size: 3MB
           max-request-size: 10MB
-    cache:
-        cache-names: ehcache
-        ehcache:
-            config: ehcache.xml
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         username: root

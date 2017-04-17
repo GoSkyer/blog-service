@@ -31,6 +31,36 @@
 
     </select>
 
+    <select id="selectByUserId" resultMap="blogResultMap">
+
+        SELECT
+            post.*,
+            tags.tag,
+            user_info.*
+        FROM post
+            LEFT JOIN tag_post_total
+                ON post.post_id = tag_post_total.post_id
+            LEFT JOIN tags ON tag_post_total.tag_id = tags.id
+            LEFT JOIN user_info ON post.auth_id = user_info.user_id
+        WHERE post.auth_id = #{userId}
+
+    </select>
+
+    <insert id="insertPost" parameterType="org.goskyer.domain.Post" useGeneratedKeys="true"
+            keyProperty="postId">
+
+        INSERT INTO post (title, auth_id, md) VALUES
+            (#{title}, #{authId}, #{md})
+
+    </insert>
+
+    <delete id="deletePost">
+
+        DELETE FROM post
+        WHERE post_id = #{postId}
+
+    </delete>
+
 
 </mapper>
 
