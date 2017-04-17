@@ -18,7 +18,7 @@ public class SpringbootstudyApplicationTests {
 
     @Test
     public void contextLoads() {
-//		System.out.println(postMapper.selectByPostId(2));
+		System.out.println(postMapper.selectByPostId(2));
 //		Logger.getGlobal().log(Level.ALL,postMapper.selectByUserId(14).toString());
 //		System.out.println(postMapper.selectByUserId(14).toString());
 //        Post post = new Post();
@@ -26,7 +26,7 @@ public class SpringbootstudyApplicationTests {
 //        post.setTitle("test4");
 //        post.setMd("md123123");
 //        postMapper.insertPost(post);
-        logger.info(postMapper.deletePost(22) + "");
+//        logger.info(postMapper.deletePost(22) + "");
     }
 
 }
