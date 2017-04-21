@@ -44,14 +44,14 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         if (authHeader != null && authHeader.startsWith(tokenHead)) {
             final String token = authHeader.substring(tokenHead.length());
-            String userNameByToken = jwtTokenUtils.getUserNameByToken(token);
+            String userNameByToken = jwtTokenUtils.getUserNameByToken(token);//根据token获取用户名
             if (userNameByToken != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                UserDetails userDetails = userDetailsService.loadUserByUsername(userNameByToken);
-                if (jwtTokenUtils.validateToken(token)) {
+                UserDetails userDetails = userDetailsService.loadUserByUsername(userNameByToken);//根据用户名获取用户信息
+                if (jwtTokenUtils.validateToken(token)) {//验证token是否过期
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                            userDetails, null, userDetails.getAuthorities());
+                            userDetails, null, userDetails.getAuthorities());//根据用户信息生成security的token
                     usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);//保存security的token
                 }
             }
         }
