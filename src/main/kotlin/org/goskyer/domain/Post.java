@@ -12,7 +12,7 @@ public class Post {
     private long authId;
     private String md;
     private UserInfo user;
-    private List<String> tags;
+    private List<Tag> tags;
 
 
     public Post() {
@@ -58,11 +58,12 @@ public class Post {
         this.user = user;
     }
 
-    public List<String> getTags() {
+
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 

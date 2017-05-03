@@ -29,7 +29,8 @@ class PostServiceImpl: PostService {
     }
 
     override fun addPost(post: Post?): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val postId = postMapper.insertPost(post)
+        return postMapper.insertTagPostTotal(post?.tags)
     }
 
     override fun deletePost(PostId: Int): Int {

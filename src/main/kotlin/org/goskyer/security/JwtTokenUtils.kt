@@ -98,8 +98,6 @@ class JwtTokenUtils {
      */
     public fun getUserNameByToken(token: String): String? {
         var claims = getClaimsFromToken(token)
-        return claims!!.subject
-
-
+        return claims?.subject
     }
 }

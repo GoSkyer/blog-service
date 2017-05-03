@@ -39,6 +39,9 @@ spring:
             connection-timeout: 30000
             maximum-pool-size: 50
             minimum-idle: 5
+    output:
+      ansi:
+        enabled: always
 mybatis:
     type-aliases-package: org.goskyer.mapping.domain,org.goskyer.mapping.mapping
     type-handlers-package: org.apache.ibatis.type.LocalDateTypeHandler

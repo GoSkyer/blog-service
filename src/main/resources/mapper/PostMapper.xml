@@ -54,6 +54,17 @@
 
     </insert>
 
+    <insert id="insertTagPostTotal" useGeneratedKeys="true"
+            keyProperty="id">
+
+        INSERT INTO tag_post_total (post_id, tag_id) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.postId}, #{item.tagId})
+        </foreach>
+
+    </insert>
+
+
     <delete id="deletePost">
 
         DELETE FROM post
