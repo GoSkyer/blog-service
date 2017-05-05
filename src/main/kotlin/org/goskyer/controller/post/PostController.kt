@@ -40,6 +40,7 @@ class PostController : BaseController() {
     fun post(@ModelAttribute post: Post): BaseResult<*>? {
         logger.info(post.toString())
         postService.addPost(post)
+
         return BaseResult.build("发表成功",0)
 
     }
