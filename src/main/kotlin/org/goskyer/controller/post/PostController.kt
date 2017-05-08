@@ -26,6 +26,7 @@ class PostController : BaseController() {
     public fun getPostByPostId(@PathVariable("postId") postId: Int): BaseResult<*>? {
         val post = postService.getPostByPostId(postId)
         logger.info(post.toString())
+
         return BaseResult.build("获取博客成功", post)
     }
 
