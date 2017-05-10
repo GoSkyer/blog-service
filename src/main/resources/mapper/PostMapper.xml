@@ -70,6 +70,7 @@
         DELETE FROM post
         WHERE post_id = #{postId}
 
+
     </delete>
 
 
